@@ -1,27 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Husani Barnwell's Labs</title>
-    <link href="assets/css/styles.css" media="all" rel="stylesheet" />
-    <link rel="shortcut icon" href="" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <title>Fullbleed Video</title>
+    <link href="styles.css" media="all" rel="stylesheet" />
   </head>
-  <body>     
-<div class="wrapper">
-    <h1>Husani Barnwell's Labs</h1>
-    <ul>
-        <li><a href="labs/lab-1/index.html">Lab 1</a></li>
-        <li><a href="labs/lab-2a/index.html">Lab 2a</a></li>
-        <li><a href="labs/lab-2b/index.html">Lab 2b</a></li>
-        <li><a href="labs/lab-3/index.html">Lab 3</a></li>
-        <li><a href="labs/lab-3b/index.html">Lab 3b</a></li>
-        <li><a href="labs/lab-4b/index.html">Lab 4b</a></li>
-        <li><a href="labs/lab-5/index.html">Lab 5</a></li>
-        <li><a href="labs/lab-6/index.html">Lab 6</a></li>
-        <li><a href="track-1/index.html">Track 1</a></li>
-        <li><a href="track-2/index.html">Track 2</a></li>
-    </ul>
-</div>
-    <script src="assets/js/app.js"></script>
+  <body>
+      <video autoplay muted loop id="myVideo">
+          <source src="rain.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Optional: some overlay text to describe the video -->
+        <div class="content">
+          <h1>Reading Without Pages</h1>
+          <p>Husani Barnwell</p>
+        </div>
   </body>
 </html>
