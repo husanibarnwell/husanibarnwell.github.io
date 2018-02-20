@@ -8,3 +8,7 @@ $('.item').click(function() {
     $(this).addClass('in-cart');
   }
 });
+
+$('.cart-toggle').click(function() {
+  $('.cart').toggleClass('hide');
+});
