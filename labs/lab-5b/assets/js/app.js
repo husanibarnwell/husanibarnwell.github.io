@@ -21,6 +21,6 @@ function add_to_cart(line_item) {
   // inject html with img and price
   var price = $(line_item).data('price'),
       img = $(line_item).data('img'),
-      line_item_html ='<div class="line-item"><div class="line-item-img"></div><div class="line-item-price">' + price + '</div>';
+      line_item_html ='<div class="line-item"><div class="line-item-img ' + img + '"></div><div class="line-item-price">' + price + '</div>';
   $('.line-items').append(line_item_html);  
 }
