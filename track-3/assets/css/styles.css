@@ -1,0 +1,40 @@
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  color: rgb(207, 26, 26);
+}
+
+body {
+  width: 100vw;
+  height: auto;
+}
+
+.wrapper {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background: #ffffff;
+  height: auto;
+}
+
+
+.header {
+  color: rgb(207, 26, 26);
+  background: rgb(0, 0, 0);
+  margin: 0 10 0 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.footer {
+  background: rgb(0, 0, 0);
+  position: relative;
+  bottom: 0;
+}
+
+.photos img { 
+  width: 100%;
+  margin-top: 20px;
+  }
