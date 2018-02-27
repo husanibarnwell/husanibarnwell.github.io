@@ -63,4 +63,10 @@ $('.line-items').on('click', '.line-item', function() {
   console.log(shopping_item_class);
   $(shopping_item_class).removeClass('in-cart');
 
+  // decrement the item count in cart
+  var current_item_count = $('.item-count').html(),
+      updated_item_count = current_item_count - 1;
+
+  $('.item-count').html(updated_item_count);
+
 });
