@@ -22,7 +22,8 @@ function add_to_cart(line_item) {
   var value = $(line_item).data('value'),
       price = $(line_item).data('price'),
       img = $(line_item).data('img'),
-      line_item_html ='<div class="line-item"><div class="line-item-img ' + img + '"></div><div class="line-item-price">' + price + '</div>';
+      target = $(line_item).data('target'),
+      line_item_html ='<div data-target="' + target + '" data-value="' + value + '" class="line-item"><div class="line-item-img ' + img + '"></div><div class="line-item-price">' + price + '</div>';
 
       $('.line-items').prepend(line_item_html);
       update_total(value);  
@@ -41,3 +42,25 @@ function update_total(line_item_value) {
   $('.total').data('value', new_value);    
 
 }
+
+$('.line-items').on('click', '.line-item', function() {
+  // remove the line item that we clicked
+  // decrement the value of total
+  // update the price of the total
+
+  var current_value = $('.total').data('value'),
+      line_item_value = $(this).data('value'),
+      new_value = current_value - line_item_value,
+      new_price = new_value.toLocaleString();
+
+  $(this).html('').removeClass('line-item');
+  $('.total').html(new_price);
+  $('.total').data('value', new_value);
+
+  // make the shopping item clickable again
+  // decrement the item count in cart
+  var shopping_item_class = $(this).data('target');
+  console.log(shopping_item_class);
+  $(shopping_item_class).removeClass('in-cart');
+
+});
