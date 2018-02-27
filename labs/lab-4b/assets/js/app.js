@@ -6,39 +6,21 @@ $('.item').click(function() {
 
     $('.item-count').html(new_count);
     $(this).addClass('in-cart');
+    // add item to .cart
+    add_to_cart (this);
   }
-
-  var vid = document.getElementById("bgvid");
-var pauseButton = document.querySelector("#polina button");
-
-if (window.matchMedia('(prefers-reduced-motion)').matches) {
-    vid.removeAttribute("autoplay");
-    vid.pause();
-    pauseButton.innerHTML = "Paused";
-}
-
-function vidFade() {
-  vid.classList.add("stopfade");
-}
-
-vid.addEventListener('ended', function()
-{
-// only functional if "loop" is removed 
-vid.pause();
-// to capture IE10
-vidFade();
-}); 
-
-
-pauseButton.addEventListener("click", function() {
-  vid.classList.toggle("stopfade");
-  if (vid.paused) {
-    vid.play();
-    pauseButton.innerHTML = "Pause";
-  } else {
-    vid.pause();
-    pauseButton.innerHTML = "Paused";
-  }
-})
 
 });
+
+$('.cart-toggle').click(function() {
+  $('.cart').toggleClass('hide');
+});
+
+function add_to_cart(line_item) {
+  // get img and price of item clicked
+  // inject html with img and price
+  var price = $(line_item).data('price'),
+      img = $(line_item).data('img'),
+      line_item_html ='<div class="line-item"><div class="line-item-img ' + img + '"></div><div class="line-item-price">' + price + '</div>';
+  $('.line-items').append(line_item_html);  
+}
